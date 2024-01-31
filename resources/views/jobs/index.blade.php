@@ -2,6 +2,18 @@
 
 @section('content')
 <main>
-    <h1>BEN ER!</h1>
+    @if(count($jobs) == 0)
+        <h2>There are no current job listings available.</h2>
+        <p>Please create a new job listing.</p>
+        <a href="{{ route('jobs.create') }}">Add a new listing</a>
+    @else
+        <nav>
+            <ul>
+            @foreach ($jobs as $job)
+                <li><p>{{ $job->title }} - {{ $job->description }}</p></li>
+            @endforeach
+            </ul>
+        </nav>
+    @endif
 </main>
 @endsection

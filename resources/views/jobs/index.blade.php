@@ -1,9 +1,7 @@
 @extends('components.layout')
 
 @section('content')
-
 <main>
-    <h1>Welcome home!</h1>
+    <h1>BEN ER!</h1>
 </main>
-
 @endsection

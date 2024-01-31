@@ -7,6 +7,7 @@
 </head>
 <body>
     <main>
+        <a href="{{ route('jobs.index') }}">JOBS</a>
         <form action="{{ route('login') }}" method="POST">
             @csrf
             <h2>Please Log in:</h2>

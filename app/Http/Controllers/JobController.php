@@ -41,13 +41,21 @@ class JobController extends Controller
             'user_id' => auth()->id()
         ]);
 
-        
         return redirect()->route('jobs.index');
     }
 
-    public function update(JobRequest $request)
+    public function update(JobRequest $request, $id)
     {
-        dd("hey");
+        $job = Job::find($id);
+
+        if ($job) {
+            $job->update([
+                'title' => $request->title,
+                'description' => $request->description,
+            ]);
+        }
+
+        return redirect()->route('jobs.index');
     }
 
     public function destroy($id)

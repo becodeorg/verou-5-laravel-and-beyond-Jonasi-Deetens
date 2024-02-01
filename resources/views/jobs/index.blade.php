@@ -5,7 +5,6 @@
     @if(count($jobs) == 0)
         <h2>There are no current job listings available.</h2>
         <p>Please create a new job listing.</p>
-        <a href="{{ route('jobs.create') }}">Add a new listing</a>
     @else
         <nav>
             <ul>
@@ -15,5 +14,6 @@
             </ul>
         </nav>
     @endif
+    <a href="{{ route('jobs.create') }}">Add a new listing</a>
 </main>
 @endsection

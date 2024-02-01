@@ -10,9 +10,10 @@ class JobController extends Controller
 {
     public function index()
     {
-        $jobs = Job::all();
-
-        return view('jobs.index', ['jobs' => $jobs]);
+        if(auth()->check()) {
+            $jobs = Job::all();
+            return view('jobs.index', ['jobs' => $jobs]);
+        } else return redirect()->route('login');
     }
 
     public function create()
@@ -20,14 +21,16 @@ class JobController extends Controller
         return view('jobs.create');
     }
 
-    public function show()
+    public function show($id)
     {
-        return "hey";
+        $job = Job::find($id);
+        return view('jobs.show', ['job' => $job]);
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return "hey";
+        $job = Job::find($id);
+        return view('jobs.edit', ['job' => $job]);
     }
 
     public function store(JobRequest $request)
@@ -42,13 +45,15 @@ class JobController extends Controller
         return redirect()->route('jobs.index');
     }
 
-    public function update()
+    public function update(JobRequest $request)
     {
-
+        dd("hey");
     }
 
-    public function destroy()
+    public function destroy($id)
     {
+        Job::destroy($id);
 
+        return redirect()->route('jobs.index');
     }
 }

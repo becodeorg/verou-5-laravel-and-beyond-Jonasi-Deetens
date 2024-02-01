@@ -1,3 +1,3 @@
 <footer>
-    <p>Footer</p>
+    <p>Copyright &copy; by Jonasi Deetens - {{Date('Y')}}</p>
 </footer>

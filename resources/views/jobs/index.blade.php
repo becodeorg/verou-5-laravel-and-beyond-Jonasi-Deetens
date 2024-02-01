@@ -2,6 +2,7 @@
 
 @section('content')
 <main>
+    <h1>Job Listings</h1>
     @if(count($jobs) == 0)
         <h2>There are no current job listings available.</h2>
         <p>Please create a new job listing.</p>
@@ -9,7 +10,10 @@
         <nav>
             <ul>
             @foreach ($jobs as $job)
-                <li><p>{{ $job->title }} - {{ $job->description }}</p></li>
+                <li>
+                    <p>{{ $job->title }} - {{ $job->description }}</p>
+                    <a href="{{ route('jobs.show', ['job' => $job->id]) }}">Check listing</a>
+                </li>
             @endforeach
             </ul>
         </nav>

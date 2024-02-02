@@ -6,11 +6,20 @@ body {
     margin: 0;
     padding: 0;
 
-    background: url(../images/board-background.png) no-repeat center center fixed; 
+    background: url(../images/board-background.webp) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+a {
+    color: brown;
+    font-weight: bold;
+}
+
+a:hover {
+    color:black;
 }
 
 .flex {
@@ -27,10 +36,10 @@ body {
 
 .container {
     margin: 50px;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 50vmin;
 }
 
 .header {
@@ -42,14 +51,17 @@ body {
 
 .header-ul {
     justify-content: space-around;
+    list-style-type: none;
 }
 
-.header-ul>li,a {
-    margin: 0 20px;
+.header-ul>li {
     font-weight: bold;
-    color: brown;
-    list-style-type: none;
+    margin: 0 10px;
+}
+
+.header-ul>li>a {
     text-decoration: none;
+    font-size: 1.3rem;
 }
 
 .title {
@@ -75,4 +87,30 @@ body {
     padding: 50px 50px;
     background-color: rgb(235, 150, 13);
     filter: drop-shadow(0px 4px 3px black)
+}
+
+.listing {
+    margin: 20px;
+    max-width: 20%;
+}
+
+.buttons {
+    justify-content: right;
+}
+
+.buttons>a {
+    margin: 0 10px;
+}
+
+.link-button {
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    color: brown;
+    text-decoration: underline;
+}
+
+.link-button:hover {
+    color: black;
 }

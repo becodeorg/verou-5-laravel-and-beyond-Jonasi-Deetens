@@ -42,4 +42,24 @@ class ListingController extends Controller
             return redirect()->route('jobs.index');
         }
     }
+
+    public function delist($id)
+    {
+        $userId = auth()->id();
+        $jobId = $id;
+
+        $listing = Listing::where(function ($query) use ($userId, $jobId) {
+            $query->where('user_id', $userId)
+                  ->where('job_id', $jobId);
+        })->first();
+
+        if ($listing)
+        {
+            Listing::destroy($listing->id);
+
+            return redirect()->route('jobs.index');
+        } else {
+            return redirect()->route('jobs.show', ['job' => $id])->withErrors(['error' => "You are not enlisted for this job."]);
+        }
+    }
 }

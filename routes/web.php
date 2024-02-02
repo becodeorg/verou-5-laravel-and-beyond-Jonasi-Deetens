@@ -28,3 +28,4 @@ Route::resource('/jobs', JobController::class);
 
 Route::get('/myBoard', [ListingController::class, 'index'])->name("myBoard");
 Route::post('/listings/enlist/{job}', [ListingController::class, 'enlist'])->name("jobs.enlist");
+Route::post('/listings/delist/{job}', [ListingController::class, 'delist'])->name("jobs.delist");

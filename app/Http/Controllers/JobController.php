@@ -24,8 +24,19 @@ class JobController extends Controller
 
     public function show($id)
     {
+        $userId = auth()->id();
+        $jobId = $id;
+
+        $listing = Listing::where(function ($query) use ($userId, $jobId) {
+            $query->where('user_id', $userId)
+                  ->where('job_id', $jobId);
+        })->first();
+
+        $enlisted = false;
+        if($listing) $enlisted = true;
+
         $job = Job::find($id);
-        return view('jobs.show', ['job' => $job]);
+        return view('jobs.show', ['job' => $job, 'enlisted' => $enlisted]);
     }
 
     public function edit($id)

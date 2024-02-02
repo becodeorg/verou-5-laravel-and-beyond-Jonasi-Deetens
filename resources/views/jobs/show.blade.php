@@ -16,6 +16,15 @@
     </div>
     @else
     <div class="flex buttons">
+        @if($enlisted) 
+        <form action="{{ route('jobs.delist', ['job' => $job->id]) }}" method="POST">
+            @csrf
+            <button class="link-button" type="submit">Delist</button>
+            @if($errors->has("error"))
+                <p>{{ $errors->first("error") }}</p>
+            @endif
+        </form>    
+        @else
         <form action="{{ route('jobs.enlist', ['job' => $job->id]) }}" method="POST">
             @csrf
             <button class="link-button" type="submit">Enlist</button>
@@ -23,6 +32,7 @@
                 <p>{{ $errors->first("error") }}</p>
             @endif
         </form>    
+        @endif
     </div>
     @endif
 </article>

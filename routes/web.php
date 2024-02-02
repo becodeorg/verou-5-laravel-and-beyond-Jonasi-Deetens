@@ -4,6 +4,7 @@ use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::post('/users', [UserController::class, 'store'])->name("register");
 
 Route::resource('/jobs', JobController::class);
 Route::post('/jobs/enlist/{job}', [JobController::class, 'enlist'])->name("jobs.enlist");
+
+Route::get('/myBoard', [ListingController::class, 'index'])->name("myBoard");

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\JobRequest;
 use App\Models\Job;
+use App\Models\Listing;
 
 class JobController extends Controller
 {
@@ -67,7 +68,10 @@ class JobController extends Controller
 
     public function enlist($id)
     {
-        //Job::destroy($id);
+        Listing::create([
+            'user_id' => auth()->id(),
+            'job_id' => $id,
+        ]);
 
         return redirect()->route('jobs.index');
     }

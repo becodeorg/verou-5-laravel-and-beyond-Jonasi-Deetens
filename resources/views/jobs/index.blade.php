@@ -16,7 +16,7 @@
                 <a href="{{ route('jobs.show', ['job' => $job->id]) }}">Read</a>
             </article>
         @endforeach
-        <article class="note listing">
+        <article class="add note listing">
             <a href="{{ route('jobs.create') }}">+</a>
         </article>
     </div>

@@ -19,7 +19,8 @@
         <form action="{{ route('jobs.enlist', ['job' => $job->id]) }}" method="POST">
             @csrf
             <button class="link-button" type="submit">Enlist</button>
-        </form>    </div>
+        </form>    
+    </div>
     @endif
 </article>
 

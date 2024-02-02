@@ -1,7 +1,7 @@
 @extends('components.layout')
 
 @section('content')
-<h1>Job Listings</h1>
+<h1 class="content-title">Job Listings</h1>
 @if(count($jobs) == 0)
     <h2>There are no current job listings available.</h2>
     <p>Please create a new job listing.</p>

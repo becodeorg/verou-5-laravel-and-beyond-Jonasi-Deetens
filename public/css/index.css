@@ -28,22 +28,38 @@ body {
 .container {
     margin: 50px;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     height: 50vmin;
 }
 
 .header {
     padding: 10px 30px;
     margin: 40px;
-    background-color: rgba(50, 48, 48, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 5px solid black;
 }
 
 .header-ul {
     justify-content: space-around;
 }
 
-.header-ul>li {
+.header-ul>li,a {
     margin: 0 20px;
+    font-weight: bold;
+    color: brown;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.title {
+    text-align: center;
+}
+
+.content-title {
+    padding: 20px 30px;
+    background-color: rgba(97, 224, 230, 1);
+    filter: drop-shadow(0px 4px 3px black)
 }
 
 .footer {
@@ -56,14 +72,7 @@ body {
 }
 
 .note {
-    padding: 100px 100px;
-    background: url(../images/note.png) no-repeat center center; 
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain;
-}
-
-form {
-    background-color: white;
+    padding: 50px 50px;
+    background-color: rgb(235, 150, 13);
+    filter: drop-shadow(0px 4px 3px black)
 }

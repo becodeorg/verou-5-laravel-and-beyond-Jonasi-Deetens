@@ -1,5 +1,5 @@
-<header class="header flex">
-    <h1>Job Board!</h1>
+<header class="header {{ auth()->check() ? 'flex' : '' }}">
+    <h1 class="{{ auth()->check() ? '' : 'title' }}">Job Board!</h1>
     @if(auth()->check())
     <nav class="header-nav">
         <ul class="header-ul flex">

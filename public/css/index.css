@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background: url(../images/board-background.png) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content {
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+}
+
+.container {
+    margin: 50px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 50vmin;
+}
+
+.header {
+    padding: 10px 30px;
+    margin: 40px;
+    background-color: rgba(50, 48, 48, 0.2);
+}
+
+.header-ul {
+    justify-content: space-around;
+}
+
+.header-ul>li {
+    margin: 0 20px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(50, 48, 48, 1);
+    color: white;
+}
+
+.note {
+    padding: 100px 100px;
+    background: url(../images/note.png) no-repeat center center; 
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    background-size: contain;
+}
+
+form {
+    background-color: white;
+}

@@ -1,19 +1,19 @@
 @extends('components.layout')
 
 @section('content')
-<main>
-    <form action="{{ route('login') }}" method="POST">
+<div class="container flex">
+    <form class="note" action="{{ route('login') }}" method="POST">
         @csrf
         <h2>Please Log in:</h2>
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" value="{{ old('username') }}" required>
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" id="username" value="{{ old('username') }}" required><br>
         @if($errors->has('username'))
             <div>
                 {{ $errors->first('username') }}
             </div>
         @endif
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" id="password" required><br>
         @if($errors->has('password'))
             <div>
                 {{ $errors->first('password') }}
@@ -21,33 +21,33 @@
         @endif
         <input type="submit" value="Login">
     </form>
-    
-    <form action="{{ route('register') }}" method="POST">
+
+    <form class="note" action="{{ route('register') }}" method="POST">
         @csrf
         <h2>Or register for a free account:</h2>
-        <label for="registerUsername">Username:</label>
-        <input type="text" name="registerUsername" id="registerUsername" value="{{ old('registerUsername') }}" required>
+        <label for="registerUsername">Username:</label><br>
+        <input type="text" name="registerUsername" id="registerUsername" value="{{ old('registerUsername') }}" required><br>
         @if($errors->has('registerUsername'))
             <div>
                 {{ $errors->first('registerUsername') }}
             </div>
         @endif
-        <label for="email">E-mail:</label>
-        <input type="text" name="email" id="email" value="{{ old('email') }}" required>
+        <label for="email">E-mail:</label><br>
+        <input type="text" name="email" id="email" value="{{ old('email') }}" required><br>
         @if($errors->has('email'))
             <div>
                 {{ $errors->first('email') }}
             </div>
         @endif
-        <label for="registerPassword">Password:</label>
-        <input type="password" name="registerPassword" id="registerPassword" required>         
+        <label for="registerPassword">Password:</label><br>
+        <input type="password" name="registerPassword" id="registerPassword" required> <br>        
         @if($errors->has('registerPassword'))
             <div>
                 {{ $errors->first('registerPassword') }}
             </div>
         @endif
-        <label for="registerPassword_confirmation">Confirm password:</label>
-        <input type="password" name="registerPassword_confirmation" id="registerPassword_confirmation" required>         
+        <label for="registerPassword_confirmation">Confirm password:</label><br>
+        <input type="password" name="registerPassword_confirmation" id="registerPassword_confirmation" required><br>      
         @if($errors->has('registerPassword_confirmation'))
             <div>
                 {{ $errors->first('registerPassword_confirmation') }}
@@ -55,5 +55,5 @@
         @endif
         <input type="submit" value="Register">
     </form>
-</main>
+</div>
 @endsection

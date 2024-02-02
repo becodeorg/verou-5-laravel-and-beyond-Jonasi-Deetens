@@ -64,4 +64,11 @@ class JobController extends Controller
 
         return redirect()->route('jobs.index');
     }
+
+    public function enlist($id)
+    {
+        //Job::destroy($id);
+
+        return redirect()->route('jobs.index');
+    }
 }

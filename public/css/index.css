@@ -84,7 +84,7 @@ a:hover {
 }
 
 .note {
-    padding: 50px 50px;
+    padding: 30px 50px;
     background-color: rgb(235, 150, 13);
     filter: drop-shadow(0px 4px 3px black)
 }
@@ -102,13 +102,17 @@ a:hover {
     margin: 0 10px;
 }
 
+.edit {
+    color: blue;
+    text-decoration: none;
+}
+
 .link-button {
     background-color: transparent;
     font-weight: bold;
     font-size: 1rem;
     border: none;
-    color: brown;
-    text-decoration: underline;
+    color: red;
 }
 
 .link-button:hover {

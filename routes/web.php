@@ -24,3 +24,4 @@ Route::get('/logout', [UserController::class, 'logout'])->name("logout");
 Route::post('/users', [UserController::class, 'store'])->name("register");
 
 Route::resource('/jobs', JobController::class);
+Route::post('/jobs/enlist/{job}', [JobController::class, 'enlist'])->name("jobs.enlist");

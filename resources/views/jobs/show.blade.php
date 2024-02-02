@@ -5,14 +5,22 @@
 <article class="note">
     <p>{{ $job->description }}</p>
     <p>- uploaded by {{ $job->user_id }}</p>
+    @if(auth()->id() == $job->user_id)
     <div class="flex buttons">
-    <a href="{{ route('jobs.edit', ['job' => $job->id]) }}">Edit</a>
-    <form action="{{ route('jobs.destroy', ['job' => $job->id]) }}" method="POST">
-        @csrf
-        @method('DELETE')
-        <button class="link-button" type="submit">Remove</button>
-    </form>
+        <a class="edit" href="{{ route('jobs.edit', ['job' => $job->id]) }}">Edit</a>
+        <form action="{{ route('jobs.destroy', ['job' => $job->id]) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button class="link-button" type="submit">Remove</button>
+        </form>
     </div>
+    @else
+    <div class="flex buttons">
+        <form action="{{ route('jobs.enlist', ['job' => $job->id]) }}" method="POST">
+            @csrf
+            <button class="link-button" type="submit">Enlist</button>
+        </form>    </div>
+    @endif
 </article>
 
 @endsection

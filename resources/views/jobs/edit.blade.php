@@ -1,11 +1,11 @@
 @extends('components.layout')
 
 @section('content')
+<h1 class="content-title">Update the job listing:</h1>
 <section class="note">
     <form action="{{ route('jobs.update', ['job' => $job->id]) }}" method="POST">
         @csrf
         @method('PUT')
-        <h2>Update the job listing:</h2>
         <label for="title">Title:</label><br>
         <input type="text" name="title" id="title" value="{{ $job->title }}" required><br>
         @if($errors->has('title'))

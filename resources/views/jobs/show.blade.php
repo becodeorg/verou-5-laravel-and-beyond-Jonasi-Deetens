@@ -19,6 +19,9 @@
         <form action="{{ route('jobs.enlist', ['job' => $job->id]) }}" method="POST">
             @csrf
             <button class="link-button" type="submit">Enlist</button>
+            @if($errors->has("error"))
+                <p>{{ $errors->first("error") }}</p>
+            @endif
         </form>    
     </div>
     @endif

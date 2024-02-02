@@ -65,14 +65,4 @@ class JobController extends Controller
 
         return redirect()->route('jobs.index');
     }
-
-    public function enlist($id)
-    {
-        Listing::create([
-            'user_id' => auth()->id(),
-            'job_id' => $id,
-        ]);
-
-        return redirect()->route('jobs.index');
-    }
 }

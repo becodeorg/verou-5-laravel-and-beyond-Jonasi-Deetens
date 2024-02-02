@@ -25,6 +25,6 @@ Route::get('/logout', [UserController::class, 'logout'])->name("logout");
 Route::post('/users', [UserController::class, 'store'])->name("register");
 
 Route::resource('/jobs', JobController::class);
-Route::post('/jobs/enlist/{job}', [JobController::class, 'enlist'])->name("jobs.enlist");
 
 Route::get('/myBoard', [ListingController::class, 'index'])->name("myBoard");
+Route::post('/listings/enlist/{job}', [ListingController::class, 'enlist'])->name("jobs.enlist");
